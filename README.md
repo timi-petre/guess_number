@@ -7,7 +7,7 @@ Author : [@timi-petre ](https://github.com/timi-petre)
 
 The application contains:
 
-    - LiStView
+    - ListView
     - Text
     - Card : 
       - Text
@@ -27,8 +27,8 @@ User tries to guess the number , if it's lower or higher, it will show up anothe
 
 Example:
  
-https://user-images.githubusercontent.com/12413810/140513206-321c4d6e-ff08-40a4-9186-c09d550f15b3.mp4
 
+https://user-images.githubusercontent.com/12413810/141467909-dc9dbade-7226-445c-907d-dbdcbf180738.mp4
 
 
 <details>
