@@ -34,28 +34,28 @@ https://user-images.githubusercontent.com/12413810/140513206-321c4d6e-ff08-40a4-
 <details>
   <summary>Image 1</summary>
 
-  ![Image 1](https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/1.png | width=100)
+    <img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/1.png" alt="Image 1" width="600" height="600">
 
 </details>
 
 <details>
   <summary>Image 2</summary>
 
-  ![Image 2](https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/2.png)
+   <img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/2.png" alt="Image 2" width="600" height="600">
 
 </details>
 
 <details>
   <summary>Image 3</summary>
 
-  ![Image 3](https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/3.png)
+    <img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/3.png" alt="Image 3" width="600" height="600">
 
 </details>
 
 <details>
   <summary>Image 4</summary>
 
-  ![Image 4](https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/4.png)
+   <img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/4.png" alt="Image 4" width="600" height="600">
 
 </details>
 
