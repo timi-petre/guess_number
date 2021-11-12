@@ -145,7 +145,6 @@ class _GuessPageState extends State<GuessPage> {
                         ElevatedButton(
                           child: Text(consts.guessReset),
                           onPressed: () {
-                            print(randomNumber);
                             final String value = textController.text;
                             final int? intValue = int.tryParse(value);
                             consts.isPressed = true;
