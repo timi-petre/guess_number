@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/12413810/140513206-321c4d6e-ff08-40a4-
 <details>
   <summary>Image 1</summary>
 
-<img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/1.png" alt="Image 1" height="50%" width="50%">
+<img src="https://github.com/timi-petre/guess_number/blob/5c5c395cf4bcfa330043d817ad4ec417acba9713/assets/1\.png" alt="Image 1" height="50%" width="50%">
 
 </details>
 
