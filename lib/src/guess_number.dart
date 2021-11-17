@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:guess_number/consts/consts.dart';
+
+import '../consts/consts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +46,7 @@ class GuessPage extends StatefulWidget {
 
 class _GuessPageState extends State<GuessPage> {
   final FocusNode _focusNode = FocusNode();
-  final textController = TextEditingController();
+  final TextEditingController textController = TextEditingController();
 
   int randomNumber = Random().nextInt(99) + 1;
 
@@ -54,6 +55,30 @@ class _GuessPageState extends State<GuessPage> {
     textController.dispose();
     _focusNode.dispose();
     super.dispose();
+  }
+
+  void createAlertDialog(BuildContext context, int intValue) {
+    showDialog<Widget>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('You guessed right!'),
+        content: Text('It was $intValue'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Try Again!'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              FocusScope.of(context).requestFocus(FocusNode());
+              consts.isEnabled = false;
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -70,7 +95,6 @@ class _GuessPageState extends State<GuessPage> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Text(
@@ -87,7 +111,7 @@ class _GuessPageState extends State<GuessPage> {
                 const SizedBox(height: 16),
                 if (consts.isPressed)
                   Column(
-                    children: [
+                    children: <Widget>[
                       Text(
                         consts.guess,
                         style: Theme.of(context).textTheme.headline3,
@@ -101,15 +125,13 @@ class _GuessPageState extends State<GuessPage> {
                 Card(
                   shape: const StadiumBorder(
                     side: BorderSide(
-                      color: Colors.black,
                       width: 2.0,
                     ),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
+                      children: <Widget>[
                         Text(
                           'Try a number!',
                           style: Theme.of(context).textTheme.headline5,
@@ -147,6 +169,7 @@ class _GuessPageState extends State<GuessPage> {
                           onPressed: () {
                             final String value = textController.text;
                             final int? intValue = int.tryParse(value);
+
                             consts.isPressed = true;
                             setState(() {
                               if (intValue != null) {
@@ -158,30 +181,8 @@ class _GuessPageState extends State<GuessPage> {
                                   consts.tries = 0;
                                   randomNumber = Random().nextInt(99) + 1;
                                   textController.clear();
+                                  createAlertDialog(context, intValue);
                                   FocusScope.of(context).unfocus();
-                                  showDialog(
-                                    context: context,
-                                    builder: (_) => AlertDialog(
-                                      title: const Text('You guessed right!'),
-                                      content: Text('It was $intValue'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                          child: const Text('Try Again!'),
-                                        ),
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                            FocusScope.of(context)
-                                                .requestFocus(FocusNode());
-                                            consts.isEnabled = false;
-                                          },
-                                          child: const Text('OK'),
-                                        ),
-                                      ],
-                                    ),
-                                  );
                                 } else {
                                   consts.textResult =
                                       int.parse(value) > randomNumber
