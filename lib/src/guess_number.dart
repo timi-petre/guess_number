@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../consts/consts.dart';
+import 'consts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -153,14 +153,12 @@ class _GuessPageState extends State<GuessPage> {
                               icon: const Icon(Icons.close),
                               onPressed: () {
                                 setState(() {
-                                  FocusScope.of(context)
-                                      .requestFocus(FocusNode());
+                                  FocusScope.of(context).requestFocus(FocusNode());
                                 });
                                 textController.clear();
                               },
                             ),
-                            counterText:
-                                '${consts.tries} / ${consts.maxTries} ${consts.textTries}',
+                            counterText: '${consts.tries} / ${consts.maxTries} ${consts.textTries}',
                           ),
                         ),
                         const SizedBox(height: 16),
@@ -169,7 +167,6 @@ class _GuessPageState extends State<GuessPage> {
                           onPressed: () {
                             final String value = textController.text;
                             final int? intValue = int.tryParse(value);
-
                             consts.isPressed = true;
                             setState(() {
                               if (intValue != null) {
@@ -184,10 +181,7 @@ class _GuessPageState extends State<GuessPage> {
                                   createAlertDialog(context, intValue);
                                   FocusScope.of(context).unfocus();
                                 } else {
-                                  consts.textResult =
-                                      int.parse(value) > randomNumber
-                                          ? 'Try Lower!'
-                                          : 'Try Higher!';
+                                  consts.textResult = int.parse(value) > randomNumber ? 'Try Lower!' : 'Try Higher!';
                                   consts.guess = 'You tried $intValue';
                                   consts.isGuessed = false;
                                   consts.tries++;
